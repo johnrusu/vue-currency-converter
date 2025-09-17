@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps, ref, computed } from "vue";
+import { defineProps, ref, computed, onUpdated } from "vue";
 
 // utils
 import { isNilOrEmpty, isArrayNotEmpty } from "../utils";
@@ -40,6 +40,7 @@ const handleAmountChange = (e: Event) => {
 };
 
 const convertAmount = () => {
+  if (props.error || !isArrayNotEmpty(currencies.value)) return;
   error.value = null;
   convertedAmount.value = null;
 
@@ -68,6 +69,12 @@ const convertAmount = () => {
   convertedAmount.value = result.toFixed(2);
   convertedAmount.value = `${LABELS.CONVERTED_AMOUNT}: ${convertedAmount.value} ${to.value}`;
 };
+
+onUpdated(() => {
+  if (!isNilOrEmpty(props.error)) {
+    error.value = props.error;
+  }
+});
 </script>
 <template>
   <div class="currency-converter-container container max-md:px-4">
@@ -79,12 +86,12 @@ const convertAmount = () => {
           {{ APP_NAME }}
         </p>
       </div>
-      <div class="panel-block" v-if="loading && isNilOrEmpty(data)">
+      <div class="panel-block" v-if="loading">
         <progress class="progress is-small is-primary w-full" max="100">
           Loading
         </progress>
       </div>
-      <div v-else>
+      <div v-if="isArrayNotEmpty(currencies) && !loading">
         <div class="panel-block">
           <b-field label="Amount" type="is-default" class="w-full">
             <b-input v-model="amount" @input="handleAmountChange"></b-input>
@@ -125,7 +132,7 @@ const convertAmount = () => {
             {{ convertedAmount }}
           </p>
         </div>
-        <div class="panel-block">
+        <div class="panel-block" v-if="isArrayNotEmpty(currencies)">
           <button
             class="button is-primary is-outlined is-fullwidth"
             @click="convertAmount"
@@ -133,11 +140,11 @@ const convertAmount = () => {
             {{ LABELS.CONVERT }}
           </button>
         </div>
-        <div class="panel-block" v-if="!isNilOrEmpty(error)">
-          <b-message type="is-danger" class="w-full">
-            {{ error }}
-          </b-message>
-        </div>
+      </div>
+      <div class="panel-block" v-if="!isNilOrEmpty(error)">
+        <b-message type="is-danger" class="w-full">
+          {{ error }}
+        </b-message>
       </div>
     </nav>
   </div>
