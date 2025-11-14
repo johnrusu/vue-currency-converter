@@ -110,7 +110,7 @@
             </p>
             <div class="buttons">
               <a
-                href="https://ionut-rusu.ro"
+                href="https://rusu-ionut.ro"
                 target="_blank"
                 class="button is-link"
               >
