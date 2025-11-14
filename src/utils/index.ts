@@ -22,7 +22,7 @@ import { anyPass, isEmpty, isNil } from "ramda";
 export const isNilOrEmpty = anyPass([isNil, isEmpty]);
 
 export const checkImage = (
-  imageSrc: string = ""
+  imageSrc: string = "",
 ): Promise<HTMLImageElement | null> => {
   if (isNilOrEmpty(imageSrc)) {
     return Promise.resolve(null);
@@ -35,16 +35,30 @@ export const checkImage = (
   });
 };
 
-export const basename = (path = "") =>
-  !isNilOrEmpty(path)
-    ? path
-        .split("/")
-        .reverse()
-        .filter((q) => q.length > 0)[0]
-    : path;
-
-export const fileExtension = (file = "") =>
-  !isNilOrEmpty(file) ? file.split(".").pop() : file;
-
 export const isArrayNotEmpty = (arr: any[]) =>
   Array.isArray(arr) && arr.length > 0;
+
+const isObject = (data: object | string) =>
+  typeof data === "object" && data !== null;
+
+/**
+ * Check if a string is valid JSON
+ *
+ * @func isValidJson
+ * @memberOf Validator
+ * @category Validator
+ * @sig String -> Boolean
+ * @param jsonString
+ * @returns
+ */
+export const validateJson = (json: object | string): object | false => {
+  if (isObject(json)) {
+    return json;
+  }
+  try {
+    return JSON.parse(json as string);
+  } catch (e) {
+    console.error("Invalid JSON string:", e);
+    return false;
+  }
+};

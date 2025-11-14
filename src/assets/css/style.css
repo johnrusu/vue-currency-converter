@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  @apply font-sans;
+  --defaultCurrencyConverterWidth: 50%;
+}
+
+html,
+body {
+  @apply m-0 p-0;
+  @apply w-full h-full;
+}
+
+#app {
+  @apply flex flex-col w-full h-full;
+}
+
+#app > .header-container {
+  @apply flex-shrink-0 px-4;
+}
+
+#app > .footer-container {
+  @apply flex-shrink-0 p-4 text-center text-sm text-gray-600;
+}
+#app > main {
+  @apply flex-grow;
+}
+
+#app > main > .currency-converter-container {
+  @apply flex justify-center items-center  h-full px-4;
+}
+
+#app > main > .currency-converter-container .currency-converter-inputs {
+  @apply flex flex-col gap-4 min-w-(--defaultCurrencyConverterWidth);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --defaultCurrencyConverterWidth: 90%;
+  }
+}

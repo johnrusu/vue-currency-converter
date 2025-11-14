@@ -2,4 +2,4 @@
 
 Tehnologies used: VueJs 3, Typescript, Bulma, Buefy, Tailwind
 
-![Alt text](./src/assets/preview.gif)
+![Alt text](./public/assets/preview.gif)

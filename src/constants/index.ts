@@ -6,7 +6,16 @@ const LABELS = {
   FROM: "From",
   TO: "To",
   CONVERTED_AMOUNT: "Converted Amount",
+  LOADING: "Loading...",
+  NO_ANIMATION: "No Animation Data Found",
+  INVALID_JSON: "Invalid JSON Data",
+  MISSING_DATA: "No Animation Data Provided",
+  FOOTER_TEXT: "© 2024 Currency Converter. All rights reserved.",
+  TEXT_COPIED: "Text copied to clipboard!",
+  COPY_TO_CLIPBOARD: "Copy amount to Clipboard",
 };
+
+const DEFAULT_TIMEOUT_COPY_CLIPBOARD = 1000;
 
 const ERROR_MESSAGES = {
   INVALID_AMOUNT: "Please enter a valid amount greater than zero",
@@ -23,10 +32,20 @@ const DEFAULTS_CURRENCY = {
   AMOUNT: "100",
 };
 
+const CONTACT_URL = "https://www.rusu-ionut.ro/contact";
+
+const ROUTER_LINKS = [
+  { path: "/", name: "Home", icon: "fas fa-home" },
+  { path: "/about", name: "About", icon: "fas fa-info-circle" },
+];
+
 export {
   CURRENCY_API_URL,
   APP_NAME,
   LABELS,
   ERROR_MESSAGES,
   DEFAULTS_CURRENCY,
+  CONTACT_URL,
+  ROUTER_LINKS,
+  DEFAULT_TIMEOUT_COPY_CLIPBOARD,
 };

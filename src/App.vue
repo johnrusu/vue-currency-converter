@@ -1,24 +1,31 @@
 <script setup lang="ts">
-import { defineAsyncComponent, onMounted } from "vue";
+// Import CurrencyConverterWrapper as a namespace with Header and Footer as properties
+import CCWrapper from "./components/CCWrapper.vue";
 
-import { CURRENCY_API_URL } from "./constants";
+// static import for loader to show during suspense
+import AnimationGenerator from "./components/AnimationGenerator.vue";
 
-// composables
-import useFetch from "./composables/fetch";
+// animation
+// json animations
+import loadingAnimation from "@/assets/animations/loading.json";
 
-const { loading, error, data, fetchData } = useFetch();
-
-// components
-const CurrencyConverter = defineAsyncComponent(
-  () => import("./components/CurrencyConverter.vue")
-);
-
-// fetch currency data on mount
-onMounted(() => {
-  fetchData(CURRENCY_API_URL);
-});
+// constants
+import { LABELS } from "@/constants";
 </script>
 
 <template>
-  <CurrencyConverter :loading="loading" :error="error" :data="data" />
+  <Suspense>
+    <template #default>
+      <CCWrapper>
+        <CCWrapper.Header />
+        <main>
+          <RouterView />
+        </main>
+        <CCWrapper.Footer :content="LABELS.FOOTER_TEXT" />
+      </CCWrapper>
+    </template>
+    <template #fallback>
+      <AnimationGenerator :data="loadingAnimation" />
+    </template>
+  </Suspense>
 </template>
