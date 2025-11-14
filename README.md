@@ -2,6 +2,8 @@
 
 A modern, fast, and user-friendly currency converter web application built with Vue.js 3 and TypeScript. Convert between multiple currencies with real-time exchange rates.
 
+🔗 **[Live Demo](https://johnrusu.github.io/vue-currency-converter/)**
+
 ![Currency Converter Preview](./public/assets/preview.gif)
 
 ## ✨ Features
