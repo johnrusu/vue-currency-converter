@@ -12,7 +12,9 @@ const content = pathOr("", ["content"], props);
 </script>
 
 <template>
-  <div class="footer-container" v-if="!isNilOrEmpty(content)">
-    {{ content }}
-  </div>
+  <div
+    class="footer-container"
+    v-if="!isNilOrEmpty(content)"
+    v-html="content"
+  ></div>
 </template>

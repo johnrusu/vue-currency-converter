@@ -21,7 +21,7 @@ import { LABELS } from "@/constants";
         <main>
           <RouterView />
         </main>
-        <CCWrapper.Footer :content="LABELS.FOOTER_TEXT" />
+        <CCWrapper.Footer :content="LABELS.FOOTER_TEXT()" />
       </CCWrapper>
     </template>
     <template #fallback>
