@@ -118,9 +118,9 @@ This application uses the [ExchangeRate-API](https://www.exchangerate-api.com/) 
 
 **Ionut Rusu**
 
-- Portfolio: [ionut-rusu.ro](https://rusu-ionut.ro)
+- Portfolio: [rusu-ionut.ro](https://rusu-ionut.ro)
 - GitHub: [@johnrusu](https://github.com/johnrusu)
-- LinkedIn: [ionut-rusu](https://www.linkedin.com/in/ionut-rusu-1035b112)
+- LinkedIn: [rusu-ionut.ro](https://www.linkedin.com/in/ionut-rusu-1035b112)
 
 ## 📄 License
 
