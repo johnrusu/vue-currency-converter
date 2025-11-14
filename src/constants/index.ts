@@ -10,7 +10,8 @@ const LABELS = {
   NO_ANIMATION: "No Animation Data Found",
   INVALID_JSON: "Invalid JSON Data",
   MISSING_DATA: "No Animation Data Provided",
-  FOOTER_TEXT: "© 2024 Currency Converter. All rights reserved.",
+  FOOTER_TEXT: () =>
+    `© ${new Date().getFullYear()} Currency Converter. All rights reserved.`,
   TEXT_COPIED: "Text copied to clipboard!",
   COPY_TO_CLIPBOARD: "Copy amount to Clipboard",
 };
