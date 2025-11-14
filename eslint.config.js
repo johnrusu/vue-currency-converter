@@ -2,7 +2,6 @@ import js from "@eslint/js";
 import vue from "eslint-plugin-vue";
 import typescript from "@vue/eslint-config-typescript";
 import prettier from "@vue/eslint-config-prettier";
-import playwright from "eslint-plugin-playwright";
 import vitest from "@vitest/eslint-plugin";
 
 export default [
@@ -32,11 +31,6 @@ export default [
     rules: {
       ...vitest.configs.recommended.rules,
     },
-  },
-  {
-    name: "app/e2e-setup",
-    files: ["tests/e2e/**/*.{test,spec}.{js,ts,jsx,tsx}"],
-    ...playwright.configs["flat/recommended"],
   },
   {
     name: "app/custom-rules",
