@@ -11,7 +11,7 @@ const LABELS = {
   INVALID_JSON: "Invalid JSON Data",
   MISSING_DATA: "No Animation Data Provided",
   FOOTER_TEXT: () =>
-    `© ${new Date().getFullYear()} Currency Converter. All rights reserved.`,
+    `© ${new Date().getFullYear()} Rusu Ionut. All rights reserved.`,
   TEXT_COPIED: "Text copied to clipboard!",
   COPY_TO_CLIPBOARD: "Copy amount to Clipboard",
 };
