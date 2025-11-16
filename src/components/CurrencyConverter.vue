@@ -105,7 +105,7 @@ onMounted(() => {
   const amountControl = amountRef.value.$el as HTMLInputElement;
   if (!isNilOrEmpty(amountControl)) {
     const amountElInput = amountControl.querySelector(
-      "input"
+      "input",
     ) as HTMLInputElement;
     if (amountElInput) {
       amountElInput.focus();

@@ -61,6 +61,6 @@ watch(
   (newText, prevText) => {
     text.value = !isNilOrEmpty(newText) && newText !== prevText ? newText! : "";
   },
-  { immediate: true }
+  { immediate: true },
 );
 </script>
