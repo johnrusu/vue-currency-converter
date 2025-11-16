@@ -13,7 +13,7 @@
           :to="path.path"
           :key="`${path.name}-link-${pathIndex}`"
         >
-          <span :class="`${path.icon} max-md:mr-2`"></span>
+          <span :class="`${path.icon} max-md:mr-4`"></span>
           <span>{{ path.name }}</span>
         </RouterLink>
       </template>

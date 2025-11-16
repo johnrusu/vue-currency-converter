@@ -13,7 +13,7 @@ const LABELS = {
   FOOTER_TEXT: () =>
     `© ${new Date().getFullYear()} Rusu Ionut. All rights reserved.`,
   TEXT_COPIED: "Text copied to clipboard!",
-  COPY_TO_CLIPBOARD: "Copy amount to Clipboard",
+  COPY_TO_CLIPBOARD: "Copy amount",
 };
 
 const DEFAULT_TIMEOUT_COPY_CLIPBOARD = 1000;

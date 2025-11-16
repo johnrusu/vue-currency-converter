@@ -1,5 +1,5 @@
 <template>
-  <div class="about-container container mx-auto px-4 py-8">
+  <div class="about-container container mx-auto">
     <div class="content max-w-4xl mx-auto">
       <h1 class="title is-2 has-text-centered mb-6">
         About Currency Converter

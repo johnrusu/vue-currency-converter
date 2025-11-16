@@ -105,7 +105,7 @@ onMounted(() => {
   const amountControl = amountRef.value.$el as HTMLInputElement;
   if (!isNilOrEmpty(amountControl)) {
     const amountElInput = amountControl.querySelector(
-      "input",
+      "input"
     ) as HTMLInputElement;
     if (amountElInput) {
       amountElInput.focus();
@@ -175,7 +175,10 @@ onMounted(() => {
         v-if="!isNilOrEmpty(convertedAmount)"
         class="py-4 text-center w-full"
       >
-        <div class="text-2xl font-semibold" v-html="covertedAmountLabel"></div>
+        <div
+          class="text-2xl font-semibold text-white"
+          v-html="covertedAmountLabel"
+        ></div>
         <ClipboardCopy
           v-if="
             !isNilOrEmpty(convertedAmount) && !isNilOrEmpty(to) && !amountCopy

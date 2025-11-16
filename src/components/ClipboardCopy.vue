@@ -6,6 +6,7 @@
       @click="() => copyText(text)"
       v-if="!isNilOrEmpty(text)"
     >
+      <span class="fas fa-copy mr-2"></span>
       <span>
         {{ LABELS.COPY_TO_CLIPBOARD }}
       </span>
@@ -60,6 +61,6 @@ watch(
   (newText, prevText) => {
     text.value = !isNilOrEmpty(newText) && newText !== prevText ? newText! : "";
   },
-  { immediate: true },
+  { immediate: true }
 );
 </script>
